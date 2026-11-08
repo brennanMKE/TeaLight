@@ -1,0 +1,42 @@
+# Normalize line endings
+* text=auto eol=lf
+
+# Source and config
+*.c        text diff=cpp
+*.cpp      text diff=cpp
+*.h        text diff=cpp
+*.hpp      text diff=cpp
+*.ini      text
+*.yaml     text
+*.yml      text
+*.md       text diff=markdown
+*.svg      text
+
+# KiCad (text S-expressions)
+*.kicad_pro  text
+*.kicad_sch  text
+*.kicad_pcb  text
+*.kicad_sym  text
+*.kicad_mod  text
+*.kicad_dru  text
+*.kicad_wks  text
+sym-lib-table text
+fp-lib-table  text
+
+# Fabrication outputs: generated, don't diff
+*.gbr      text -diff linguist-generated
+*.gtl      text -diff linguist-generated
+*.gbl      text -diff linguist-generated
+*.drl      text -diff linguist-generated
+*.step     text -diff
+*.csv      text
+
+# Binary
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.pdf      binary
+*.zip      binary
+*.hex      binary
+*.elf      binary
+*.bin      binary
