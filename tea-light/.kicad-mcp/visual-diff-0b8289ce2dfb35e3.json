@@ -1,0 +1,59 @@
+{
+  "status": "ready",
+  "schematic_path": "/Users/brennan/Developer/PlatformIO/TeaLight/tea-light/tea-light.kicad_sch",
+  "before_snapshot": "/Users/brennan/Developer/PlatformIO/TeaLight/tea-light/.kicad-mcp/visual-diff-0b8289ce2dfb35e3-before.kicad_sch",
+  "before_sha256": "29b156a5e58a28e836ffe6fe6adbf4bf1f5bd4a4bf31694ca2a4642c8036c2c1",
+  "after_sha256": "135b9d9e38a84787c451226d55852ce5b5449f9ed4eb675c83a3980cc8a03586",
+  "changed_objects": [
+    {
+      "id": "symbol:C3:unit=1",
+      "kind": "symbol",
+      "change": "modified",
+      "before": {
+        "kind": "symbol",
+        "lib_id": "Device:C",
+        "reference": "C3",
+        "value": "100n",
+        "footprint": "Capacitor_SMD:C_0402_1005Metric",
+        "properties": {
+          "Reference": "C3",
+          "Value": "100n",
+          "Footprint": "Capacitor_SMD:C_0402_1005Metric",
+          "Datasheet": "",
+          "Description": ""
+        },
+        "dnp": false,
+        "in_bom": true,
+        "x": 328.93,
+        "y": 96.52,
+        "rotation": 0,
+        "unit": 1
+      },
+      "after": {
+        "kind": "symbol",
+        "lib_id": "Device:C",
+        "reference": "C3",
+        "value": "100n",
+        "footprint": "Capacitor_SMD:C_0402_1005Metric",
+        "properties": {
+          "Reference": "C3",
+          "Value": "100n",
+          "Footprint": "Capacitor_SMD:C_0402_1005Metric",
+          "Datasheet": "",
+          "Description": "",
+          "LCSC": "C1525"
+        },
+        "dnp": false,
+        "in_bom": true,
+        "x": 328.93,
+        "y": 96.52,
+        "rotation": 0,
+        "unit": 1
+      }
+    }
+  ],
+  "changed_refs": [
+    "C3"
+  ],
+  "changed_nets": []
+}

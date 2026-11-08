@@ -49,18 +49,36 @@ A learn mode (triggered on USB unplug) lets any spare NEC remote be paired as al
 |---|---|---|
 | `tea-light-design.md` | Design spec | Done |
 | `docs/schematic.svg` | Circuit overview drawing | Done |
-| `tea-light/` | KiCad project (schematic, PCB, JLCPCB outputs) | Planned |
+| `tea-light/` | KiCad 10 project: schematic, 32 mm PCB, project libraries, build scripts | Done (rev 0.1, unverified) |
+| `tea-light/production/` | Gerber zip, JLCPCB BOM and CPL, 3D renders | Generated |
 | `firmware/` | PlatformIO project for the ATtiny85 (ATTinyCore) | Planned |
 | `ir-blaster.yaml` | ESPHome config for the IR blaster, plus HA automations | Planned |
 
+## PCB
+
+![PCB top](tea-light/production/tea-light-top.png)
+
+The board is generated from the schematic by scripts that use KiCad's bundled Python:
+
+```sh
+cd tea-light
+/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3 scripts/build_board.py
+scripts/export_fab.sh   # ERC, DRC, Gerber zip, JLCPCB BOM/CPL, renders
+```
+
+`build_board.py` places parts, routes with a small built-in maze router (`routes.py`), and pours GND on both layers. Re-running it overwrites manual edits to the PCB.
+
+Before ordering:
+
+- J1 (GCT USB4125-GF-A) and D1/D2 (0603 warm white) have no LCSC part yet, and U2 and U3 showed no JLCPCB stock when mapped. Source or substitute them.
+- Check the TSOP75238TT footprint against the Vishay drawing, and check the CPL rotations in JLCPCB's preview.
+- Parts are on both sides, which JLCPCB charges extra to assemble.
+
 ## Roadmap
 
-1. KiCad schematic and ERC
-2. 32 mm round PCB layout, DRC against JLCPCB 2-layer rules
-3. Gerbers, drill, BOM, and CPL for JLCPCB assembly with LCSC part numbers
-4. Firmware: state machine, flicker, VCC measurement, command set, learn mode
-5. ESPHome IR blaster config and Home Assistant automations
-6. Bring-up checklist: fuses, IR decode, current measurements, range through the shell
+1. Firmware: state machine, flicker, VCC measurement, command set, learn mode
+2. ESPHome IR blaster config and Home Assistant automations
+3. Bring-up checklist: fuses, IR decode, current measurements, range through the shell
 
 ## Open questions
 

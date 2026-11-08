@@ -39,3 +39,10 @@ __pycache__/
 
 # Claude Code local settings
 .claude/settings.local.json
+
+# KiCad production: keep the zip, BOM, CPL and renders; skip reports and loose Gerbers
+tea-light/production/*.rpt
+tea-light/production/*.json
+tea-light/production/*.net
+tea-light/production/gerbers/
+tea-light/production/schematic-renders/
