@@ -46,3 +46,6 @@ tea-light/production/*.json
 tea-light/production/*.net
 tea-light/production/gerbers/
 tea-light/production/schematic-renders/
+
+# KiCad MCP server cache
+.kicad-mcp/
